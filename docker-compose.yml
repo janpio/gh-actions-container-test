@@ -1,0 +1,16 @@
+version: "3"
+services:
+
+  test-db-postgres-9:
+    image: postgres:9
+    restart: always
+    command: postgres -c 'max_connections=1000'
+    environment:
+      POSTGRES_PASSWORD: "prisma"
+    ports:
+      - "5431:5432"
+    networks:
+      - engine-tests
+
+networks:
+  engine-tests:
