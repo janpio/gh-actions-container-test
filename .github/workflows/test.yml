@@ -23,7 +23,9 @@ jobs:
 
       - name: Setup tmate session
         uses: mxschmitt/action-tmate@v3
-
+        with:
+          sudo: false
+        
       - run: psql -h 127.0.0.1 -p 5431 -d prisma -U prisma
       - run: psql -h localhost -p 5431 -d prisma -U prisma
       - run: psql -h engine-tests -p 5431 -d prisma -U prisma
