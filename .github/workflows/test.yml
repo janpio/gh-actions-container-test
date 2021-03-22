@@ -25,3 +25,6 @@ jobs:
       - run: psql -h localhost -p 5431 -d prisma -U prisma
       - run: psql -h engine-tests -p 5431 -d prisma -U prisma
       - run: psql -h test-db-postgres-9 -p 5431 -d prisma -U prisma
+
+      - name: Setup tmate session
+        uses: mxschmitt/action-tmate@v3
