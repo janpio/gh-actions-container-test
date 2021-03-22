@@ -21,5 +21,4 @@ jobs:
       - name: "Start databases"
         run: docker-compose -f docker-compose.yml up -d 
 
-      - run: npm install
-      - run: node test.js
+      - run: psql -h 127.0.0.1 -p 5431 -d prisma -U prisma
